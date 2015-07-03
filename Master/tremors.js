@@ -71,54 +71,157 @@ map = {
 };
 
 var graboid1 = {
-  x: -1550,
-  y: -1550,
-  spdx:10,
-  spdy:10,
-  h: 50,
-  w: 100,
-  noise:0,
+  x: -1600,
+  y: -1600,
+  speed: 10,
+  mod: 1,
+  h: 20,
+  w: 20,
   color: 'black',
+  angle: 45,
+
+  update: function(){
+    (this.x+= this.mod * this.speed * Math.cos(Math.PI/180 * this.angle));
+    (this.y+= this.mod * this.speed * Math.sin(Math.PI/180 * this.angle));},
+
+
+  draw: function(){
+    ctx.save();
+    ctx.fillStyle = this.color;
+    var graboid=new Path2D();
+    ctx.translate(this.x, this.y);
+    ctx.rotate((Math.PI/180 * this.angle));
+    ctx.beginPath();
+    ctx.arc(this.w/2-145, 0, 10, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-135, 0, 15, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-125, 0, 20, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-110, 0, 25, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-85, 0, 30, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-60, 0, 32, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-35, 0, 25, 0, 2 * Math.PI, false);
+    ctx.fill();
+    graboid.moveTo(this.w/2,0);
+    graboid.lineTo(this.w/2-this.w,0-this.h);
+    graboid.lineTo(this.w/2-this.w,0+this.h);
+    ctx.fill(graboid);
+    ctx.restore();}
 };
 
 var graboid2 = {
-  x: 1550,
-  y: -1550,
-  spdx:10,
-  spdy:10,
-  h: 50,
-  w: 100,
-  noise:0,
+  x: 2400,
+  y: -1600,
+  speed: 9,
+  mod: 1,
+  h: 20,
+  w: 20,
   color: 'black',
+  angle: 135,
+
+  update: function(){
+    (this.x+= this.mod * this.speed * Math.cos(Math.PI/180 * this.angle));
+    (this.y+= this.mod * this.speed * Math.sin(Math.PI/180 * this.angle));},
+
+
+  draw: function(){
+    ctx.save();
+    ctx.fillStyle = this.color;
+    var graboid=new Path2D();
+    ctx.translate(this.x, this.y);
+    ctx.rotate((Math.PI/180 * this.angle));
+    ctx.beginPath();
+    ctx.arc(this.w/2-145, 0, 10, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-135, 0, 15, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-125, 0, 20, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-110, 0, 25, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-85, 0, 30, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-60, 0, 32, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-35, 0, 25, 0, 2 * Math.PI, false);
+    ctx.fill();
+    graboid.moveTo(this.w/2,0);
+    graboid.lineTo(this.w/2-this.w,0-this.h);
+    graboid.lineTo(this.w/2-this.w,0+this.h);
+    ctx.fill(graboid);
+    ctx.restore();}
 };
 
 var graboid3 = {
-  x: 1550,
-  y: 1550,
-  spdx:10,
-  spdy:10,
-  h: 50,
-  w: 100,
-  noise:0,
+  x: 2400,
+  y: 2400,
+  speed: 6,
+  mod: 1,
+  h: 20,
+  w: 20,
   color: 'black',
+  angle: 225,
+
+  update: function(){
+    (this.x+= this.mod * this.speed * Math.cos(Math.PI/180 * this.angle));
+    (this.y+= this.mod * this.speed * Math.sin(Math.PI/180 * this.angle));},
+
+
+  draw: function(){
+    ctx.save();
+    ctx.fillStyle = this.color;
+    var graboid=new Path2D();
+    ctx.translate(this.x, this.y);
+    ctx.rotate((Math.PI/180 * this.angle));
+    ctx.beginPath();
+    ctx.arc(this.w/2-145, 0, 10, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-135, 0, 15, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-125, 0, 20, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-110, 0, 25, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-85, 0, 30, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-60, 0, 32, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-35, 0, 25, 0, 2 * Math.PI, false);
+    ctx.fill();
+    graboid.moveTo(this.w/2,0);
+    graboid.lineTo(this.w/2-this.w,0-this.h);
+    graboid.lineTo(this.w/2-this.w,0+this.h);
+    ctx.fill(graboid);
+    ctx.restore();}
 };
 
 var graboid4 = {
-  x: 1550,
-  y: 1550,
-  spdx:10,
-  spdy:10,
-  h: 50,
-  w: 100,
-  noise:0,
+  x: -1600,
+  y: 2400,
+  speed: 8,
+  mod: 1,
+  h: 20,
+  w: 20,
   color: 'black',
-};
+  angle: 315,
 
+  update: function(){
+    (this.x+= this.mod * this.speed * Math.cos(Math.PI/180 * this.angle));
+    (this.y+= this.mod * this.speed * Math.sin(Math.PI/180 * this.angle));},
+
+
+  draw: function(){
+    ctx.save();
+    ctx.fillStyle = this.color;
+    var graboid=new Path2D();
+    ctx.translate(this.x, this.y);
+    ctx.rotate((Math.PI/180 * this.angle));
+    ctx.beginPath();
+    ctx.arc(this.w/2-145, 0, 10, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-135, 0, 15, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-125, 0, 20, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-110, 0, 25, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-85, 0, 30, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-60, 0, 32, 0, 2 * Math.PI, false);
+    ctx.arc(this.w/2-35, 0, 25, 0, 2 * Math.PI, false);
+    ctx.fill();
+    graboid.moveTo(this.w/2,0);
+    graboid.lineTo(this.w/2-this.w,0-this.h);
+    graboid.lineTo(this.w/2-this.w,0+this.h);
+    ctx.fill(graboid);
+    ctx.restore();}
+};
 
 
 
 board = {
-  objects: [map, player1, player2, graboid1, graboid2, graboid3, graboid4],
+  objects: [map, player1, player2],
   draw: function() {
     console.log("drawing");
     for (var obj in this.objects) {
@@ -147,6 +250,14 @@ function init(){
 function run(){
   ctx.clearRect(0,0,WIDTH,HEIGHT);
   board.draw();
+  graboid1.draw();
+  graboid2.draw();
+  graboid3.draw();
+  graboid4.draw();
+  graboid1.update();
+  graboid2.update();
+  graboid3.update();
+  graboid4.update();
   board.update();
 };
 
